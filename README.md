@@ -1,2 +1,20 @@
 # ansible-farm-discover
-Discover the hosts in a subnet, and create an ansible catalog for them.
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+![GitHub all releases](https://img.shields.io/github/downloads/rgglez/ansible-farm-discover/total) 
+![GitHub issues](https://img.shields.io/github/issues/rgglez/ansible-farm-discover) 
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/rgglez/ansible-farm-discover)
+
+This perl script discovers the hosts in a subnet using [nmap](https://nmap.org/), and creates an ansible inventory for them.
+
+You can modify the name of the output file, and you need to modify the list which holds the subnets, for instance:
+
+```perl
+@networks = qw(10.0.1.0/24 192.168.2.0/24);
+```
+
+## License
+
+Copyright (c) 2023 Rodolfo González González.
+
+See the LICENSE file.
