@@ -10,7 +10,7 @@ This perl script discovers the hosts in a subnet using [nmap](https://nmap.org/)
 You can modify the name of the output file, and you need to modify the subnetworks to be scanned, by using these parameters:
 
 ```bash
-perl discover --networks="192.168.0.0/24 10.0.1.0/24" --file=farm.yaml
+perl discover.pl --networks="192.168.0.0/24 10.0.1.0/24" --file=farm.yaml
 ```
 
 ## Dependencies
