@@ -16,21 +16,37 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-# List of subnetworks to scan...
-@networks = qw(10.0.1.0/24);
+use Getopt::Long;
+
+# get parameters...
+
+$networks = "";
+$file = "farm.yaml";
+
+@subnets = qw(10.0.1.0/24);
+
+GetOptions ("networks=s" => \$networks,
+            "file=s" => \$file)
+or die("Error in command line arguments\n");
+
+# scan subnetworks...
+
+if ($networks ne "") {
+   @subnets = split(/ /, $networks);
+}
 
 @output = ();
-foreach (@networks) {
+foreach (@subnets) {
    print "Scanning $_\n";
    my @tmp = `nmap -sP $_`;
    @output = (@output, @tmp);
 }
 
-# Create inventory...
+# guardar servers activos...
 
-open(F, ">farm.yaml");
+open(F, ">$file");
 
-print F "MyFarm:\n";
+print F "Farm:\n";
 print F "  hosts:\n";
 
 my $i = 0;
@@ -43,12 +59,15 @@ foreach (@output) {
    }
 }
 
+# you can define ansible vars here, such as the username and 
+# the key to login to the farm. This is optional.
+
 print F "  vars:\n";
 print F "    ansible_user: ecs-user\n";
 print F "    become: yes\n";
 print F "    become_user: root\n";
 print F "    become_method: sudo -i\n";
-print F "    ansible_ssh_private_key_file: ~/.ssh/mykey.pem\n";
+print F "    ansible_ssh_private_key_file: ~/.ssh/ssh_key.pem\n";
 
 close(F);
 
