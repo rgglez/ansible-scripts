@@ -22,4 +22,4 @@ perl discover.pl --networks="192.168.0.0/24 10.0.1.0/24" --file=farm.yaml
 
 Copyright (c) 2023 Rodolfo González González.
 
-See the LICENSE file.
+Read the LICENSE file.
