@@ -16,6 +16,7 @@ perl discover.pl --networks="192.168.0.0/24 10.0.1.0/24" --file=farm.yaml
 ## Dependencies
 
 * [Getopt::Long](https://perldoc.perl.org/Getopt::Long)
+* [nmap](https://nmap.org/)
 
 ## License
 
