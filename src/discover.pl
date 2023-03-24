@@ -42,7 +42,7 @@ foreach (@subnets) {
    @output = (@output, @tmp);
 }
 
-# guardar servers activos...
+# store active servers...
 
 open(F, ">$file");
 
