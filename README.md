@@ -4,6 +4,8 @@
 ![GitHub all releases](https://img.shields.io/github/downloads/rgglez/ansible-scripts/total) 
 ![GitHub issues](https://img.shields.io/github/issues/rgglez/ansible-scripts) 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/rgglez/ansible-scripts)
+![GitHub stars](https://img.shields.io/github/stars/rgglez/ansible-scripts?style=social)
+![GitHub forks](https://img.shields.io/github/forks/rgglez/ansible-scripts?style=social)
 
 Miscelaneous scripts for [Ansible](https://docs.ansible.com/ansible/latest/index.html).
 
