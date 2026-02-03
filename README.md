@@ -28,6 +28,6 @@ perl discover.pl --networks="192.168.0.0/24 10.0.1.0/24" --file=farm.yaml
 
 ## License
 
-Copyright (c) 2023 Rodolfo González González.
+Copyright (c) 2026 Rodolfo González González.
 
 Licensed under [GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html). Read the [LICENSE](LICENSE) file.
