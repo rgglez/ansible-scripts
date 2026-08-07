@@ -20,10 +20,8 @@ use Getopt::Long;
 
 # get parameters...
 
-$networks = "";
+$networks = "10.0.1.0/24";
 $file = "farm.yaml";
-
-@subnets = qw(10.0.1.0/24);
 
 GetOptions ("networks=s" => \$networks,
             "file=s" => \$file)
@@ -32,13 +30,8 @@ or die("Error in command line arguments\n");
 # scan subnetworks...
 
 if ($networks ne "") {
-   @subnets = split(/ /, $networks);
-}
-
-@output = ();
-foreach (@subnets) {
-   print "Scanning $_\n";
-   my @tmp = `nmap -sP $_`;
+   print "Scanning $networks\n";
+   my @tmp = `nmap -n -Pn -p 80 --open $networks`;
    @output = (@output, @tmp);
 }
 
@@ -59,7 +52,7 @@ foreach (@output) {
    }
 }
 
-# you can define ansible vars here, such as the username and 
+# you can define ansible vars here, such as the username and
 # the key to login to the farm. This is optional.
 
 print F "  vars:\n";
